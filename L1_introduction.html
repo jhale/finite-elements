@@ -64,7 +64,6 @@ A video recording of the following material is available here.<div class="summar
 <iframe src="https://player.vimeo.com/video/490698097"
 frameborder="0" allow="autoplay; fullscreen"
 allowfullscreen></iframe></div>
-<p class="card-text">Imperial students can also <a class="reference external" href="https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=6aca04a5-7fd9-4d9d-9178-ac2b0115718d">watch this video on Panopto</a></p>
 </div>
 </details><p>In this section we provide an introduction that establishes some
 initial ideas about how the finite element method works and what it is
@@ -89,7 +88,6 @@ A video recording of the following material is available here.<div class="summar
 <iframe src="https://player.vimeo.com/video/490697959"
 frameborder="0" allow="autoplay; fullscreen"
 allowfullscreen></iframe></div>
-<p class="card-text">Imperial students can also <a class="reference external" href="https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c6be8b35-aa19-4e33-8d25-ac2b011caba3">watch this video on Panopto</a></p>
 </div>
 </details><p>In this introduction we concentrate on the specific model problem of
 Poisson’s equation in the unit square.</p>
@@ -112,7 +110,7 @@ to find the corresponding unknown function <span class="math notranslate nohighl
 equation (including the boundary conditions). Here we have combined a
 mixture of Dirichlet boundary conditions specifying the value of the
 function <span class="math notranslate nohighlight">\(u\)</span>, and Neumann boundary conditions specifying the value of
-the normal derivative <span class="math notranslate nohighlight">\(\partial u/\partial n\)</span>. This is because these
+the normal derivative <span class="math notranslate nohighlight">\(\partial u/\partial n := n \cdot \nabla u\)</span>. This is because these
 two types of boundary conditions are treated differently in the finite
 element method, and we would like to expose both treatments in the
 same example. The treatment of boundary conditions is one of the
@@ -131,7 +129,6 @@ A video recording of the following material is available here.<div class="summar
 <iframe src="https://player.vimeo.com/video/490697890"
 frameborder="0" allow="autoplay; fullscreen"
 allowfullscreen></iframe></div>
-<p class="card-text">Imperial students can also <a class="reference external" href="https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=db13f3fa-b3cb-41d1-b888-ac2b011f11e3">watch this video on Panopto</a></p>
 </div>
 </details><p>The description of our finite element method starts by considering
 a triangulation.</p>
@@ -166,7 +163,6 @@ A video recording of the following material is available here.<div class="summar
 <iframe src="https://player.vimeo.com/video/490697877"
 frameborder="0" allow="autoplay; fullscreen"
 allowfullscreen></iframe></div>
-<p class="card-text">Imperial students can also <a class="reference external" href="https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2a222f38-92ce-478e-946c-ac2b0120bf58">watch this video on Panopto</a></p>
 </div>
 </details><p>The idea is that we will approximate functions which are polynomial
 (at some chosen degree) when restricted to each triangle, with some
@@ -185,7 +181,7 @@ space.</p>
 <p>Let <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> be a triangulation of <span class="math notranslate nohighlight">\(\Omega\)</span>. Then the P1 finite
 element space is a space <span class="math notranslate nohighlight">\(V_h\)</span> containing all functions <span class="math notranslate nohighlight">\(v\)</span> such that</p>
 <ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(v\in C^0(\Omega)\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(v\in C^0(\Omega)\)</span> the space of continuous functions at every point in <span class="math notranslate nohighlight">\(\Omega\)</span>,</p></li>
 <li><p><span class="math notranslate nohighlight">\(v|_{K_i}\)</span> is a linear function for each <span class="math notranslate nohighlight">\(K_i\in \mathcal{T}\)</span>.</p></li>
 </ol>
 <p>We also define the following subspace,</p>
@@ -213,12 +209,11 @@ A video recording of the following material is available here.<div class="summar
 <iframe src="https://player.vimeo.com/video/490697738"
 frameborder="0" allow="autoplay; fullscreen"
 allowfullscreen></iframe></div>
-<p class="card-text">Imperial students can also <a class="reference external" href="https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=10377186-f51a-49e2-8b0b-ac2b012265df">watch this video on Panopto</a></p>
 </div>
 </details><p>The finite element method is based upon integral formulations of
 partial differential equations. Rather than checking if two functions
 are equal by checking their value at every point, we will just check
-that they are equal in an integral sense. We do  this by introducing
+that they are equal in an integral sense. We do this by introducing
 the <span class="math notranslate nohighlight">\(L^2\)</span> norm, which is a way of measuring the “magnitude” of a function.</p>
 <div class="proof proof-type-definition" id="id4">
 
@@ -282,7 +277,6 @@ A video recording of the following material is available here.<div class="summar
 <iframe src="https://player.vimeo.com/video/490697597"
 frameborder="0" allow="autoplay; fullscreen"
 allowfullscreen></iframe></div>
-<p class="card-text">Imperial students can also <a class="reference external" href="https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=897d8372-11bd-4904-a1db-ac2c00fc7835">watch this video on Panopto</a></p>
 </div>
 </details><p>Functions in <span class="math notranslate nohighlight">\(V_h\)</span> do not have derivatives everywhere. This means that
 we have to work with a more general definition (and later we shall
@@ -341,7 +335,6 @@ A video recording of the following material is available here.<div class="summar
 <iframe src="https://player.vimeo.com/video/490697493"
 frameborder="0" allow="autoplay; fullscreen"
 allowfullscreen></iframe></div>
-<p class="card-text">Imperial students can also <a class="reference external" href="https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=7740df4e-bc02-4997-8c75-ac2c00fe54eb">watch this video on Panopto</a></p>
 </div>
 </details><p>We will now use the finite element derivative to develop the finite
 element discretisation. We assume that we have a solution <span class="math notranslate nohighlight">\(u\)</span> to
@@ -349,7 +342,30 @@ Equation <a class="reference internal" href="#equation-eq-strong-poisson">(1.1)<
 (e.g. <span class="math notranslate nohighlight">\(u\in C^1\)</span> in this case). (Later, we will consider more general
 types of solutions to this equation, but this assumption just
 motivates things for the time being.)</p>
-<p>We take <span class="math notranslate nohighlight">\(v\in \mathring{V}_h\)</span>, multiply by Equation <a class="reference internal" href="#equation-eq-strong-poisson">(1.1)</a>, and integrate over the domain. Integration by parts in each triangle then gives</p>
+<p>We take <span class="math notranslate nohighlight">\(v\in \mathring{V}_h\)</span>, multiply by Equation <a class="reference internal" href="#equation-eq-strong-poisson">(1.1)</a>,
+and integrate over the domain.</p>
+<p>We then use the following integration by parts result.</p>
+<div class="proof proof-type-theorem" id="id10">
+
+    <div class="proof-title">
+        <span class="proof-type">Theorem 1.10</span>
+        
+            <span class="proof-title-name">(Integration by parts)</span>
+        
+    </div><div class="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(u\in C^1(\Omega)\)</span> and <span class="math notranslate nohighlight">\(n\)</span> an outward normal to the boundary <span class="math notranslate nohighlight">\(\partial
+\Omega\)</span>. Then</p>
+<div class="math notranslate nohighlight">
+\[\int_{\Omega} (- \Delta u) v \, d x = \int_{\Omega} \nabla u \cdot \nabla v
+\, dx - \int_{\partial \Omega} v \, (n \cdot \nabla u) \, d S.\]</div>
+<div class="proof proof-type-proof">
+
+    <div class="proof-title">
+        <span class="proof-type">Proof </span>
+        
+    </div><div class="proof-content">
+</div></div><p>See e.g. Brenner and Scott Section 5.1 including weaker assumptions.</p>
+</div></div><p>Using this integration by parts in each triangle <span class="math notranslate nohighlight">\(K_i\)</span> then gives</p>
 <div class="math notranslate nohighlight">
 \[\sum_{i}\left(\int_{K_i} \nabla
 v\cdot \nabla u \, d x
@@ -389,12 +405,11 @@ A video recording of the following material is available here.<div class="summar
 <iframe src="https://player.vimeo.com/video/490693961"
 frameborder="0" allow="autoplay; fullscreen"
 allowfullscreen></iframe></div>
-<p class="card-text">Imperial students can also <a class="reference external" href="https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=099aeda2-0a23-4c88-ad0b-ac2c01051715">watch this video on Panopto</a></p>
 </div>
-</details><div class="proof proof-type-definition" id="id10">
+</details><div class="proof proof-type-definition" id="id11">
 <span id="def-discrete-poisson"></span>
     <div class="proof-title">
-        <span class="proof-type">Definition 1.10</span>
+        <span class="proof-type">Definition 1.11</span>
         
     </div><div class="proof-content">
 <p>The finite element approximation <span class="math notranslate nohighlight">\(u_h \in \mathring{V}_h\)</span> to the
@@ -413,34 +428,33 @@ A video recording of the following material is available here.<div class="summar
 <iframe src="https://player.vimeo.com/video/490693998"
 frameborder="0" allow="autoplay; fullscreen"
 allowfullscreen></iframe></div>
-<p class="card-text">Imperial students can also <a class="reference external" href="https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f4cb8c0c-4664-4a21-8043-ac2c010738da">watch this video on Panopto</a></p>
 </div>
 </details><p>We now present some numerical results for the case <span class="math notranslate nohighlight">\(f = 2\pi^2\sin(\pi
 x)\sin(2\pi y)\)</span>.</p>
-<figure class="align-default" id="id11">
+<figure class="align-default" id="id12">
 <span id="figplots"></span><a class="reference internal image-reference" href="_images/level2.png"><img alt="_images/level2.png" src="_images/level2.png" style="width: 60%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 1.1 </span><span class="caption-text">Numerical solution on a <span class="math notranslate nohighlight">\(4\times 4\)</span> mesh.</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-<figure class="align-default" id="id12">
-<a class="reference internal image-reference" href="_images/level4.png"><img alt="_images/level4.png" src="_images/level4.png" style="width: 60%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 1.2 </span><span class="caption-text">Numerical solution on a <span class="math notranslate nohighlight">\(16\times 16\)</span> mesh.</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+<p><span class="caption-number">Fig. 1.1 </span><span class="caption-text">Numerical solution on a <span class="math notranslate nohighlight">\(4\times 4\)</span> mesh.</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id13">
-<a class="reference internal image-reference" href="_images/level7.png"><img alt="_images/level7.png" src="_images/level7.png" style="width: 60%;" /></a>
+<a class="reference internal image-reference" href="_images/level4.png"><img alt="_images/level4.png" src="_images/level4.png" style="width: 60%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 1.3 </span><span class="caption-text">Numerical solution on a <span class="math notranslate nohighlight">\(128\times 128\)</span> mesh.</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+<p><span class="caption-number">Fig. 1.2 </span><span class="caption-text">Numerical solution on a <span class="math notranslate nohighlight">\(16\times 16\)</span> mesh.</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id14">
+<a class="reference internal image-reference" href="_images/level7.png"><img alt="_images/level7.png" src="_images/level7.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1.3 </span><span class="caption-text">Numerical solution on a <span class="math notranslate nohighlight">\(128\times 128\)</span> mesh.</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id15">
 <a class="reference internal image-reference" href="_images/poisson_error.png"><img alt="_images/poisson_error.png" src="_images/poisson_error.png" style="width: 60%;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 1.4 </span><span class="caption-text">Plot showing error versus mesh resolution. We observe
 the error decreases proportionally to <span class="math notranslate nohighlight">\(h^2\)</span>, where <span class="math notranslate nohighlight">\(h\)</span> is
-the maximum triangle edge size in the triangulation.</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+the maximum triangle edge size in the triangulation.</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>We see that for this example, the error is decreasing as we increase
@@ -456,7 +470,6 @@ A video recording of the following material is available here.<div class="summar
 <iframe src="https://player.vimeo.com/video/490693824"
 frameborder="0" allow="autoplay; fullscreen"
 allowfullscreen></iframe></div>
-<p class="card-text">Imperial students can also <a class="reference external" href="https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8319e621-155a-43a1-b181-ac8d00aed113">watch this video on Panopto</a></p>
 </div>
 </details><p>In general, our formulation raises a number of questions.</p>
 <ol class="arabic simple">
@@ -481,10 +494,10 @@ mathematical biology, mathematical finance, astrophysics and
 cosmology, etc. This course is intended as a starting point to
 introduce the general concepts that can be applied in all of these
 areas.</p>
-<div class="proof proof-type-exercise" id="id15">
+<div class="proof proof-type-exercise" id="id16">
 
     <div class="proof-title">
-        <span class="proof-type">Exercise 1.11</span>
+        <span class="proof-type">Exercise 1.12</span>
         
     </div><div class="proof-content">
 <p>Derive a finite element approximation for the following problem.</p>
@@ -495,10 +508,10 @@ areas.</p>
 \exp(\cos(2\pi x)),\]</div>
 </div></blockquote>
 <p>with boundary conditions <span class="math notranslate nohighlight">\(u=0\)</span> on the entire boundary.</p>
-</div></div><div class="proof proof-type-exercise" id="id16">
+</div></div><div class="proof proof-type-exercise" id="id17">
 
     <div class="proof-title">
-        <span class="proof-type">Exercise 1.12</span>
+        <span class="proof-type">Exercise 1.13</span>
         
     </div><div class="proof-content">
 <p>Derive a finite element approximation for the following problem.</p>
@@ -509,10 +522,10 @@ areas.</p>
 </div></blockquote>
 <p>in the <span class="math notranslate nohighlight">\(1\times 1\)</span> square region as above, with boundary conditions
 <span class="math notranslate nohighlight">\(u=x(1-x)\)</span> on the entire boundary.</p>
-</div></div><div class="proof proof-type-exercise" id="id17">
+</div></div><div class="proof proof-type-exercise" id="id18">
 <span id="def-robin"></span>
     <div class="proof-title">
-        <span class="proof-type">Exercise 1.13</span>
+        <span class="proof-type">Exercise 1.14</span>
         
     </div><div class="proof-content">
 <p>Derive a finite element approximation for the following problem.</p>
@@ -537,15 +550,14 @@ A video recording of the following material is available here.<div class="summar
 <iframe src="https://player.vimeo.com/video/490693738"
 frameborder="0" allow="autoplay; fullscreen"
 allowfullscreen></iframe></div>
-<p class="card-text">Imperial students can also <a class="reference external" href="https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=11e55d12-a0fc-42ed-b609-ac8d00af7068">watch this video on Panopto</a></p>
 </div>
 </details><p>The finite element approximation above is only useful if we can
 actually compute it. To do this, we need to construct an efficient
 basis for <span class="math notranslate nohighlight">\(P1\)</span>, which we call the nodal basis.</p>
-<div class="proof proof-type-definition" id="id18">
+<div class="proof proof-type-definition" id="id19">
 
     <div class="proof-title">
-        <span class="proof-type">Definition 1.14</span>
+        <span class="proof-type">Definition 1.15</span>
         
             <span class="proof-title-name">(P1 nodal basis)</span>
         
@@ -599,7 +611,6 @@ A video recording of the following material is available here.<div class="summar
 <iframe src="https://player.vimeo.com/video/490693615"
 frameborder="0" allow="autoplay; fullscreen"
 allowfullscreen></iframe></div>
-<p class="card-text">Imperial students can also <a class="reference external" href="https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9be9b911-c291-4c90-b3ac-ac8d00c0e814">watch this video on Panopto</a></p>
 </div>
 </details><p>Putting solvability aside for the moment, the goal of the
 implementation sections of this course is to explain how to
