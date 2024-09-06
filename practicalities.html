@@ -1,27 +1,24 @@
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="./">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Practical matters &#8212; Finite element course 2022.0 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/fenics.css" />
+    <title>Practical matters &#8212; Finite element course 2024.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/fenics.css?v=7793b76c" />
     <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <script src="_static/documentation_options.js?v=7ff0cb77"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/proof.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Software tools" href="tools.html" />
-    <link rel="prev" title="6. Stokes equation" href="L6_stokes.html" />
+    <link rel="next" title="1. Introduction" href="L1_introduction.html" />
+    <link rel="prev" title="Numerical Methods for Variational problems" href="index.html" />
 <!--[if lte IE 6]>
 <link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
 <![endif]-->
@@ -51,13 +48,13 @@
           <div class="body" role="main">
             
   <section id="practical-matters">
-<h1>Practical matters<a class="headerlink" href="#practical-matters" title="Permalink to this headline">¶</a></h1>
+<h1>Practical matters<a class="headerlink" href="#practical-matters" title="Link to this heading">¶</a></h1>
 <section id="instructor">
-<h2>Instructor<a class="headerlink" href="#instructor" title="Permalink to this headline">¶</a></h2>
+<h2>Instructor<a class="headerlink" href="#instructor" title="Link to this heading">¶</a></h2>
 <p>The course is led by <a class="reference external" href="https://www.uni.lu/recherche/fstm/doe/members/jack_hale">Dr Jack S. Hale</a>.</p>
 </section>
 <section id="accreditation">
-<h2>Accreditation<a class="headerlink" href="#accreditation" title="Permalink to this headline">¶</a></h2>
+<h2>Accreditation<a class="headerlink" href="#accreditation" title="Link to this heading">¶</a></h2>
 <p>This course is accredited within the Department of Mathematics Masters in
 Mathematics for 5 ECTS. It is also available to doctoral candidates in the
 Doctoral School in Science and Engineering. Doctoral candidates must undergo
@@ -65,7 +62,7 @@ the same assessment (exam and coursework) as the Masters candidates to receive
 the 5 ECTS.</p>
 </section>
 <section id="assumed-knowledge">
-<h2>Assumed knowledge<a class="headerlink" href="#assumed-knowledge" title="Permalink to this headline">¶</a></h2>
+<h2>Assumed knowledge<a class="headerlink" href="#assumed-knowledge" title="Link to this heading">¶</a></h2>
 <p>The theory component of the course will assume only a familiarity with
 PDEs, vector calculus and basic undergraduate analysis.</p>
 <p>The implementation part of the course additionally assumes some ability to
@@ -78,14 +75,14 @@ one of the suggested tutorials.</p>
 the theory and implementation part.</p>
 </section>
 <section id="assessment">
-<h2>Assessment<a class="headerlink" href="#assessment" title="Permalink to this headline">¶</a></h2>
+<h2>Assessment<a class="headerlink" href="#assessment" title="Link to this heading">¶</a></h2>
 <p>The theory part and modern practice part of the course will be
 assessed by an exam worth 50% of the course. The implementation part
 of the course will be assessed by submission of your working code
 implementing finite element in two dimensions. This will also be worth
 50%.</p>
 <section id="submitting-code-for-feedback">
-<h3>Submitting code for feedback<a class="headerlink" href="#submitting-code-for-feedback" title="Permalink to this headline">¶</a></h3>
+<h3>Submitting code for feedback<a class="headerlink" href="#submitting-code-for-feedback" title="Link to this heading">¶</a></h3>
 <p>The assessment of your finite element implementation will occur in a
 single submission at the end of the semester. However feedback on your
 progress will be available during the course. Informal feedback will
@@ -95,7 +92,7 @@ semester, in weeks 7 and 13.</p>
 </section>
 </section>
 <section id="moodle">
-<h2>Moodle<a class="headerlink" href="#moodle" title="Permalink to this headline">¶</a></h2>
+<h2>Moodle<a class="headerlink" href="#moodle" title="Link to this heading">¶</a></h2>
 <p>Important announcements and the coursework submission will be conducted via the
 University’s <a class="reference external" href="https://moodle.uni.lu">Moodle</a>. Please ensure you are enrolled
 in this course on Moodle!</p>
@@ -110,8 +107,8 @@ in this course on Moodle!</p>
       <div class="clearer"></div>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2014-2022, David A. Ham, Colin J. Cotter and Jack S. Hale.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+    &#169; Copyright 2014-2022, David A. Ham, Colin J. Cotter and Jack S. Hale.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
     </div>
   </body>
 </html>
