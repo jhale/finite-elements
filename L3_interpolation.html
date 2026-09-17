@@ -5,17 +5,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>3. Interpolation operators &#8212; Finite element course 2024.0 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <title>3. Interpolation operators &#8212; Finite element course 2026.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/fenics.css?v=7793b76c" />
     <link rel="stylesheet" type="text/css" href="_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <script src="_static/documentation_options.js?v=7ff0cb77"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/documentation_options.js?v=9c5a5fc5"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/proof.js"></script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
-    <script async="async" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script defer="defer" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="4. Finite element problems: solvability and stability" href="L4_feprobs.html" />
@@ -372,10 +372,11 @@ d^{k+1-|\beta|}|f|_{H^{k+1}(\Omega)}.\]</div>
 \sum_{|\alpha|=k+1}\int_\Omega
 \int_B\int_0^1 |D^\alpha f(ty+(1-t)x)|^2 \, d t\, d y
 \int_B\int_0^1 t^{2k}\, d t\, d y\,\, d x.\end{aligned}\end{align} \]</div>
-<p>Then</p>
+<p>The final factor is <span class="math notranslate nohighlight">\(\int_B\int_0^1 t^{2k}\, d t\, d y = |B|/(2k+1)\)</span>,
+which cancels one power of <span class="math notranslate nohighlight">\(|B|\)</span>, so that</p>
 <div class="math notranslate nohighlight">
 \[\int_\Omega |f(x)-Q_{k,B}f(x)|^2\, d x
-\leq C_1\frac{d^{2(k+1)}}{|B|^2}
+\leq C_1\frac{d^{2(k+1)}}{|B|}
 \sum_{|\alpha|=k+1}\int_\Omega
 \int_B\int_0^1 |D^\alpha f(ty+(1-t)x)|^2 \, d t\, d y \, d x.\]</div>
 <p>We will get the result by changing variables and exchanging
@@ -394,13 +395,13 @@ into <span class="math notranslate nohighlight">\([0,1/2]\)</span> and <span cla
 \, d y,\\&amp;\leq  2^{n-1}|B|\int_\Omega |D^\alpha f(z)|^2\, d z.\end{aligned}\end{align} \]</div>
 <p>Similarly, for <span class="math notranslate nohighlight">\(II\)</span>,</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}II &amp;=  \int_B \int_{1/2}^1 \int_{\mathbb{R}^n} |g_\alpha(ty+(1-t)x)|^2
-\, d x \, d t\, d y,\\&amp;=  \int_B \int_{1/2}^1 \int_{\mathbb{R}^n} |g_\alpha(ty)|^2\, d x \, d t
-\, d y,\\&amp;=  \int_B \int_{1/2}^1 \int_{\mathbb{R}^n} |g_\alpha(z)|^2
+\[ \begin{align}\begin{aligned}II &amp;=  \int_\Omega \int_{1/2}^1 \int_{\mathbb{R}^n} |g_\alpha(ty+(1-t)x)|^2
+\, d y \, d t\, d x,\\&amp;=  \int_\Omega \int_{1/2}^1 \int_{\mathbb{R}^n} |g_\alpha(ty)|^2\, d y \, d t
+\, d x,\\&amp;=  \int_\Omega \int_{1/2}^1 \int_{\mathbb{R}^n} |g_\alpha(z)|^2
 t^{-n}
 \, d z \, d t
-\, d y,\\&amp;\leq  2^{n-1}|B|\int_\Omega |D^\alpha f(z)|^2\, d z.\end{aligned}\end{align} \]</div>
-<p>Hence, we obtain the required bounds for <span class="math notranslate nohighlight">\(|\beta|=0\)</span>. For higher
+\, d x,\\&amp;\leq  2^{n-1}|\Omega|\int_\Omega |D^\alpha f(z)|^2\, d z.\end{aligned}\end{align} \]</div>
+<p>Hence, we obtain the required bounds for <span class="math notranslate nohighlight">\(|\beta|=0\)</span>, after using <span class="math notranslate nohighlight">\(|\Omega|\geq |B|\)</span>. For higher
 derivatives we use the fact that</p>
 <div class="math notranslate nohighlight">
 \[D^\beta Q_{k,B} f(x) = Q_{k-|\beta|,B}D^\beta f(x),\]</div>
@@ -540,9 +541,10 @@ Then</p>
         <span class="proof-type">Proof </span>
         
     </div><div class="proof-content">
-<p>Let <span class="math notranslate nohighlight">\(\{\phi_i\}_{i=1}^n\)</span> be the nodal basis for <span class="math notranslate nohighlight">\(\mathcal{P}\)</span>. Then</p>
+<p>Let <span class="math notranslate nohighlight">\(\{\phi_i\}_{i=1}^M\)</span> be the nodal basis for <span class="math notranslate nohighlight">\(\mathcal{P}\)</span>, where
+<span class="math notranslate nohighlight">\(M = \dim\mathcal{P}\)</span> is the number of nodal variables. Then</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}\| \mathcal{I}_{K_1}u\|_{H^k(K_1)} &amp;\leq \sum_{i=1}^k \|\phi_i\|_{H^k(K_1)}|N_i(u)|\\&amp;\leq \underbrace{\sum_{i=1}^k \|\phi_i\|_{H^k(K_1)}\|N_i\|_{C^{l,\infty}(K_1)'}}_{C_0}\|u\|_{C^{l,\infty}(K_1)},\\&amp;\leq C \|u\|_{H^k(K_1)},\end{aligned}\end{align} \]</div>
+\[ \begin{align}\begin{aligned}\| \mathcal{I}_{K_1}u\|_{H^k(K_1)} &amp;\leq \sum_{i=1}^M \|\phi_i\|_{H^k(K_1)}|N_i(u)|\\&amp;\leq \underbrace{\sum_{i=1}^M \|\phi_i\|_{H^k(K_1)}\|N_i\|_{C^{l,\infty}(K_1)'}}_{C_0}\|u\|_{C^{l,\infty}(K_1)},\\&amp;\leq C \|u\|_{H^k(K_1)},\end{aligned}\end{align} \]</div>
 <p>where the Sobolev inequality was used in the last line.</p>
 </div></div><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -578,8 +580,8 @@ local interpolation operator satisfies</p>
         
     </div><div class="proof-content">
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}|\mathcal{I}_{K_1}u-u|_{H^i(K_1)}^2 &amp;\leq \|\mathcal{I}_{K_1}u-u\|_{H^k(K_1)}^2\\&amp;=
-\|\mathcal{I}_{K_1}u-Q_{k,B}u + Q_{k,B}u - u\|_{H^k(K_1)}^2\\&amp;\leq \|Q_{k,B}u-u\|_{H^k(K_1)}^2 + \|\mathcal{I}(u-Q_{k,B}u)\|_{H^k(K_1)}^2,\\&amp;\leq \|Q_{k,B}u-u\|_{H^k(K_1)}^2 + C^2\|Q_{k,B}u-u\|_{H^k(K_1)}^2,\\&amp;\leq (1+C^2)|u|_{H^{k+1}(K_1)}^2,\end{aligned}\end{align} \]</div>
+\[ \begin{align}\begin{aligned}|\mathcal{I}_{K_1}u-u|_{H^i(K_1)} &amp;\leq \|\mathcal{I}_{K_1}u-u\|_{H^k(K_1)}\\&amp;=
+\|\mathcal{I}_{K_1}u-Q_{k,B}u + Q_{k,B}u - u\|_{H^k(K_1)}\\&amp;\leq \|Q_{k,B}u-u\|_{H^k(K_1)} + \|\mathcal{I}(u-Q_{k,B}u)\|_{H^k(K_1)},\\&amp;\leq \|Q_{k,B}u-u\|_{H^k(K_1)} + C\|Q_{k,B}u-u\|_{H^k(K_1)},\\&amp;\leq (1+C)|u|_{H^{k+1}(K_1)},\end{aligned}\end{align} \]</div>
 <p>where we used the fact that <span class="math notranslate nohighlight">\(\mathcal{I}_{K_1}Q_{k,B}u = Q_{k,B}u\)</span> in the
 second line and the previous lemma in the third line.</p>
 </div></div><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -682,8 +684,8 @@ element approximations.</p>
       <div class="clearer"></div>
     </div>
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2014-2022, David A. Ham, Colin J. Cotter and Jack S. Hale.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    &#169; Copyright 2014-2026, David A. Ham, Colin J. Cotter and Jack S. Hale.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
     </div>
   </body>
 </html>

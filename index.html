@@ -5,17 +5,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Numerical Methods for Variational problems &#8212; Finite element course 2024.0 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <title>Numerical Methods for Variational problems &#8212; Finite element course 2026.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/fenics.css?v=7793b76c" />
     <link rel="stylesheet" type="text/css" href="_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <script src="_static/documentation_options.js?v=7ff0cb77"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/documentation_options.js?v=9c5a5fc5"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/proof.js"></script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
-    <script async="async" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script defer="defer" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Practical matters" href="practicalities.html" />
@@ -159,10 +159,11 @@ exercise.</p>
 <li><p><a class="reference external" href="_static/FEExam-2018.pdf">2018 exam paper</a> and <a class="reference external" href="_static/FEExam-2018-soln.pdf">solutions</a></p></li>
 <li><p><a class="reference external" href="_static/FEExam-2019.pdf">2019 exam paper</a> and <a class="reference external" href="_static/FEExam-2019-solns.pdf">solutions</a></p></li>
 <li><p><a class="reference external" href="_static/FEExam-2020.pdf">2020 exam paper</a> and <a class="reference external" href="_static/FEExam-2020-solns.pdf">solutions</a></p></li>
-<li><p><a class="reference external" href="_static/FEExam-2021.pdf">2021 exam paper</a> and <a class="reference external" href="_static/FEExam-2021-solns.pdf">solutions</a></p></li>
+<li><p><a class="reference external" href="_static/FEExam-2021.pdf">2021 exam paper</a> and <a class="reference external" href="_static/FEExam-2021-solns.pdf">solutions</a> (Note that this was an open book examination for remote exam during the COVID19 era.)</p></li>
 <li><p><a class="reference external" href="_static/FEExam-2022.pdf">2022 exam paper</a> and <a class="reference external" href="_static/FEExam-2022-soln.pdf">solutions</a></p></li>
-<li><p><a class="reference external" href="_static/FEExam-2022.pdf">2022 exam paper</a> and <a class="reference external" href="_static/FEExam-2022-solns.pdf">solutions</a></p></li>
 <li><p><a class="reference external" href="_static/FEExam-2023.pdf">2023 exam paper</a> and <a class="reference external" href="_static/FEExam-2023-solns.pdf">solutions</a></p></li>
+<li><p><a class="reference external" href="_static/FEExam-2024.pdf">2024 exam paper</a> and <a class="reference external" href="_static/FEExam-2024-solns.pdf">solutions</a></p></li>
+<li><p><a class="reference external" href="_static/FEExam-2025.pdf">2025 exam paper</a> and <a class="reference external" href="_static/FEExam-2025-solns.pdf">solutions</a></p></li>
 </ul>
 <p>The examination at the University of Luxembourg will be adapted to the
 specific needs of the students attending the course.</p>
@@ -291,8 +292,9 @@ presented. We will look at how to do this in more detail presently.</p>
 <li class="toctree-l2"><a class="reference internal" href="9_mixed_problems.html#vector-valued-function-spaces">9.2. Vector-valued function spaces</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_mixed_problems.html#functions-in-vector-valued-spaces">9.3. Functions in vector-valued spaces</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_mixed_problems.html#mixed-function-spaces">9.4. Mixed function spaces</a></li>
-<li class="toctree-l2"><a class="reference internal" href="9_mixed_problems.html#manufacturing-a-solution-to-the-stokes-equations">9.5. Manufacturing a solution to the Stokes equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="9_mixed_problems.html#implementing-the-stokes-problem">9.6. Implementing the Stokes problem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9_mixed_problems.html#plane-poiseuille-flow">9.5. Plane Poiseuille flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9_mixed_problems.html#manufacturing-a-solution-to-the-stokes-equations">9.6. Manufacturing a solution to the Stokes equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9_mixed_problems.html#implementing-the-stokes-problem">9.7. Implementing the Stokes problem</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="zbibliography.html">10. References</a></li>
@@ -319,8 +321,8 @@ presented. We will look at how to do this in more detail presently.</p>
       <div class="clearer"></div>
     </div>
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2014-2022, David A. Ham, Colin J. Cotter and Jack S. Hale.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    &#169; Copyright 2014-2026, David A. Ham, Colin J. Cotter and Jack S. Hale.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
     </div>
   </body>
 </html>

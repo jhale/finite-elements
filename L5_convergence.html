@@ -5,17 +5,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>5. Convergence of finite element approximations &#8212; Finite element course 2024.0 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <title>5. Convergence of finite element approximations &#8212; Finite element course 2026.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/fenics.css?v=7793b76c" />
     <link rel="stylesheet" type="text/css" href="_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <script src="_static/documentation_options.js?v=7ff0cb77"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/documentation_options.js?v=9c5a5fc5"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/proof.js"></script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
-    <script async="async" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script defer="defer" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="6. Stokes equation" href="L6_stokes.html" />
@@ -240,7 +240,7 @@ u\in L^1_{loc}: \|u\|_{H^k(\Omega)}&lt;\infty\right\}\]</div>
 </div></div><p>Since <span class="math notranslate nohighlight">\(\|u\|_{H^k(\Omega)} \leq \|u\|_{H^l(\Omega)}\)</span> for <span class="math notranslate nohighlight">\(k&lt;l\)</span>,
 we have <span class="math notranslate nohighlight">\(H^l \subset H^k\)</span> for <span class="math notranslate nohighlight">\(k&lt;l\)</span>.</p>
 <p>If we are to consider limits of finite element functions in these
-Sobolev spaces, then it is important that they are closed, i.e.
+Sobolev spaces, then it is important that they are complete, i.e.
 limits remain in the spaces.</p>
 <div class="proof proof-type-lemma" id="id12">
 
@@ -250,9 +250,9 @@ limits remain in the spaces.</p>
             <span class="proof-title-name">((H^k) spaces are Hilbert spaces)</span>
         
     </div><div class="proof-content">
-<p>The space <span class="math notranslate nohighlight">\(H^k(\Omega)\)</span> is closed.</p>
+<p>The space <span class="math notranslate nohighlight">\(H^k(\Omega)\)</span> is complete.</p>
 <p>Let <span class="math notranslate nohighlight">\(\{u_i\}\)</span> be a Cauchy sequence in <span class="math notranslate nohighlight">\(H^k\)</span>. Then <span class="math notranslate nohighlight">\(\{D^\alpha u_i\}\)</span>
-is a Cauchy sequence in <span class="math notranslate nohighlight">\(L^2(\Omega)\)</span> (which is closed), so <span class="math notranslate nohighlight">\(\exists
+is a Cauchy sequence in <span class="math notranslate nohighlight">\(L^2(\Omega)\)</span> (which is complete), so <span class="math notranslate nohighlight">\(\exists
 v^\alpha \in L^2(\Omega)\)</span> such that <span class="math notranslate nohighlight">\(D^\alpha u_i\to v^\alpha\)</span> for
 <span class="math notranslate nohighlight">\(|\alpha|\leq k\)</span>.  If <span class="math notranslate nohighlight">\(w_j\to w\)</span> in <span class="math notranslate nohighlight">\(L^2(\Omega)\)</span>, then for <span class="math notranslate nohighlight">\(\phi\in
 C^\infty_0(\Omega)\)</span>,</p>
@@ -1069,8 +1069,8 @@ areas of the domain.</p></li>
       <div class="clearer"></div>
     </div>
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2014-2022, David A. Ham, Colin J. Cotter and Jack S. Hale.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    &#169; Copyright 2014-2026, David A. Ham, Colin J. Cotter and Jack S. Hale.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
     </div>
   </body>
 </html>

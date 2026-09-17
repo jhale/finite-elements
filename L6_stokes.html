@@ -5,17 +5,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>6. Stokes equation &#8212; Finite element course 2024.0 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <title>6. Stokes equation &#8212; Finite element course 2026.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/fenics.css?v=7793b76c" />
     <link rel="stylesheet" type="text/css" href="_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <script src="_static/documentation_options.js?v=7ff0cb77"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/documentation_options.js?v=9c5a5fc5"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/proof.js"></script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
-    <script async="async" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script defer="defer" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Software tools" href="tools.html" />
@@ -80,7 +80,7 @@ that <span class="math notranslate nohighlight">\(\nabla u\)</span> is a 2-tenso
 <span class="eqno">(6.2)<a class="headerlink" href="#equation-l6-stokes-1" title="Link to this equation">¶</a></span>\[(\nabla u)_{ij} = \frac{\partial u_i}{\partial x_j},
 (\nabla u^T)_{ij} = (\nabla u)_{ji}.\]</div>
 <p>Note that under the incompressibility constraint <span class="math notranslate nohighlight">\(\nabla\cdot u =0\)</span>, we
-can write <span class="math notranslate nohighlight">\(\nabla\cdot\epsilon(u)=\nabla^2 u\)</span>. However, this leads to
+can write <span class="math notranslate nohighlight">\(2\nabla\cdot\epsilon(u)=\nabla^2 u\)</span>. However, this leads to
 various issues in the finite element discretisation, and makes it harder
 to apply stress-free boundary conditions.</p>
 <p>Under no slip boundary conditions, the pressure <span class="math notranslate nohighlight">\(p\)</span> only appears in
@@ -636,8 +636,8 @@ the following result.</p>
             <span class="proof-title-name">(Fortin’s trick)</span>
         
     </div><div class="proof-content">
-<p>Assume that the inf-sup condition holds for $b(v,q)$ over $Vtimes Q$
-with inf-sup constant $beta&gt;0$.
+<p>Assume that the inf-sup condition holds for <span class="math notranslate nohighlight">\(b(v,q)\)</span> over <span class="math notranslate nohighlight">\(V\times Q\)</span>
+with inf-sup constant <span class="math notranslate nohighlight">\(\beta&gt;0\)</span>.
 If there exists a linear operator <span class="math notranslate nohighlight">\(\Pi_h:V\to V_h\)</span> such that</p>
 <blockquote>
 <div><div class="math notranslate nohighlight" id="equation-l6-stokes-48">
@@ -737,17 +737,17 @@ vanish on all vertices (and hence all edges) is defined via</p>
 <p>This is well defined since</p>
 <blockquote>
 <div><div class="math notranslate nohighlight" id="equation-l6-stokes-55">
-<span class="eqno">(6.60)<a class="headerlink" href="#equation-l6-stokes-55" title="Link to this equation">¶</a></span>\[ \begin{align}\begin{aligned}b(\Pi_2v-v,q_h) = \int_{\Omega} q_h\nabla\cdot(\Pi_2v-v)d\,x\\= \int_\Omega (v-\Pi_2v)\nabla q_h d\, x,\end{aligned}\end{align} \]</div>
+<span class="eqno">(6.60)<a class="headerlink" href="#equation-l6-stokes-55" title="Link to this equation">¶</a></span>\[ \begin{align}\begin{aligned}b(\Pi_2v-v,q_h) = -\int_{\Omega} q_h\nabla\cdot(\Pi_2v-v)d\,x\\= -\int_\Omega (v-\Pi_2v)\nabla q_h d\, x,\end{aligned}\end{align} \]</div>
 </div></blockquote>
 <p>where we were allowed to integrate by parts since <span class="math notranslate nohighlight">\(v,\Pi_2v,q_h\)</span>
 are all in <span class="math notranslate nohighlight">\(H^1(\Omega)\)</span>. We see that our definition can be
-satisfied by picking <span class="math notranslate nohighlight">\(\Pi_2v\)</span> to be the function in $(B_3)^2$ such
+satisfied by picking <span class="math notranslate nohighlight">\(\Pi_2v\)</span> to be the function in <span class="math notranslate nohighlight">\((B_3)^2\)</span> such
 that</p>
 <blockquote>
 <div><div class="math notranslate nohighlight" id="equation-l6-stokes-56">
 <span class="eqno">(6.61)<a class="headerlink" href="#equation-l6-stokes-56" title="Link to this equation">¶</a></span>\[\int_K \Phi_2v d\, x x = \int_K v d\, x x,\]</div>
 </div></blockquote>
-<p>for each triangle $K$.</p>
+<p>for each triangle <span class="math notranslate nohighlight">\(K\)</span>.</p>
 <p>It can be shown using an inverse inequality (we will take it
 as read here) that</p>
 <blockquote>
@@ -769,8 +769,8 @@ Fortin’s trick.</p>
       <div class="clearer"></div>
     </div>
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2014-2022, David A. Ham, Colin J. Cotter and Jack S. Hale.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    &#169; Copyright 2014-2026, David A. Ham, Colin J. Cotter and Jack S. Hale.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
     </div>
   </body>
 </html>

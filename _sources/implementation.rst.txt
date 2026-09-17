@@ -14,13 +14,13 @@ will invite you to implement another part of a finite element implementation, so
 that by the end of the term we will be solving finite element problems.
 
 Along the way, there will be the opportunity to get help and feedback through
-the module Piazza board, weekly online labs, and through pull requests for
+the module Ed board, weekly online labs, and through pull requests for
 feedback in weeks 4 and 7. 
 
 Formalities and marking scheme
 ------------------------------
 
-The implementation exercise is due at 1300 on Friday 22 March 2024. Submission
+The implementation exercise is due at 1300 on Monday 24 March 2025. Submission
 is via GitHub: the last commit pushed to GitHub and dated before the deadline
 will be marked.
 
@@ -87,8 +87,8 @@ terminal<fons:terminal>` and switch to the folder:
 
     $ cd docs
 
-Note that `$` is the command prompt (which might be a different character such
-as `%` or `>` for you). You don't type the prompt. Start with `cd`. Next we
+Note that ``$`` is the command prompt (which might be a different character such
+as ``%`` or ``>`` for you). You don't type the prompt. Start with ``cd``. Next we
 create the folder we'll use for this course. Suppose we choose to call it
 :file:`finite-element`, then we would type:
 
@@ -96,7 +96,7 @@ create the folder we'll use for this course. Suppose we choose to call it
 
     $ mkdir finite-element
 
-`mkdir` stands for "make directory". *Directory* is an alternative term to
+``mkdir`` stands for "make directory". *Directory* is an alternative term to
 *folder*. Finally we switch ("change directory") into that folder:
 
 .. code-block:: console
@@ -116,7 +116,7 @@ system. With your current working folder set to the course folder, run:
 
     $ python3 -m venv fe_venv
 
-If your Python interpreter has a different name (e.g. `python3.11` or `py`)
+If your Python interpreter has a different name (e.g. ``python3.11`` or ``py``)
 then you type that instead.
 
 Activating your venv
@@ -141,8 +141,40 @@ containing the venv, you need to modify the path accordingly.
 Setting up your repository
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We're using a tool called `GitHub classroom <https://classroom.github.com>`_ to automate the creation of your
-copies of the repository. To create your repository, `click here <https://classroom.github.com/a/ZEeJSgi5>`_.
+If you're taking the Imperial module then we're using a tool called `GitHub
+classroom <https://classroom.github.com>`_ to automate the creation of your
+copies of the repository. To create your repository, `click here
+<https://classroom.github.com/a/WOdAhT90>`_.
+
+.. note::
+
+    When attempt to accept an assignment you might instead receive an error
+    message starting:
+
+    .. warning::
+
+       Your GitHub account cannot this invitation at this time. The
+       Classroom's Organization restricts membership to users within the same
+       enterprise.
+
+    This means that you need to associate your GitHub account with the Imperial
+    College London GitHub enterprise. You should click on the Imperial
+    GitHub `single sign on page
+    <https://github.com/orgs/ImperialCollegeLondon/sso>`__ and sign in using
+    your Imperial credentials. If prompted to do so, also sign in with your
+    GitHub username. You should now be able to go back and click on the
+    assignment acceptance link.
+
+If you're not taking the Imperial module and simply want to attempt the
+exercised for your own purposes, then you can obtain the skeleton code by
+forking `the course repository
+<https://github.com/finite-element/finite-element-course>`__.
+
+.. warning::
+
+    If you are taking the Imperial module for credit, you must use the GitHub
+    classroom link. If you do not do so then your commits will not show as
+    submission of the exercise.
 
 Cloning a local copy
 ~~~~~~~~~~~~~~~~~~~~
@@ -154,7 +186,7 @@ At the command line on your working machine type:
     $ git clone <url> finite-element-course
 
 Substituting your git repository url for <url>. Your git repository
-url can be found by clicking on `clone or download` at the top right of your repository page on GitHub. 
+url can be found by clicking on ``clone or download`` at the top right of your repository page on GitHub.
 
 Installing the course Python package
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -272,7 +304,7 @@ raising an issue <pop:issue-report>`.
 
 .. note::
 
-    Please don't post large pieces of code to Piazza. Just post minimal examples
+    Please don't post large pieces of code to Ed. Just post minimal examples
     if they help. However always commit and push your work, and post the
     :ref:`git commit hash <fons:git-hash>` in the repository. The instructor can
     always find your work from the git hash, so long as you've pushed to GitHub.

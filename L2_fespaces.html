@@ -5,17 +5,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>2. Finite element spaces: local to global &#8212; Finite element course 2024.0 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <title>2. Finite element spaces: local to global &#8212; Finite element course 2026.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/fenics.css?v=7793b76c" />
     <link rel="stylesheet" type="text/css" href="_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <script src="_static/documentation_options.js?v=7ff0cb77"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/documentation_options.js?v=9c5a5fc5"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/proof.js"></script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
-    <script async="async" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script defer="defer" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="3. Interpolation operators" href="L3_interpolation.html" />
@@ -131,7 +131,7 @@ allowfullscreen></iframe></div>
             <span class="proof-title-name">((local) nodal basis)</span>
         
     </div><div class="proof-content">
-<p>Let <span class="math notranslate nohighlight">\((K,\mathcal{P},\mathcal{N})\)</span> be a finite element. The nodal basis is the basis <span class="math notranslate nohighlight">\(\{\phi_0,\phi_2,\ldots,\phi_k\}\)</span> of <span class="math notranslate nohighlight">\(\mathcal{P}\)</span> that is dual to <span class="math notranslate nohighlight">\(\mathcal{N}\)</span>, i.e.</p>
+<p>Let <span class="math notranslate nohighlight">\((K,\mathcal{P},\mathcal{N})\)</span> be a finite element. The nodal basis is the basis <span class="math notranslate nohighlight">\(\{\phi_0,\phi_1,\ldots,\phi_k\}\)</span> of <span class="math notranslate nohighlight">\(\mathcal{P}\)</span> that is dual to <span class="math notranslate nohighlight">\(\mathcal{N}\)</span>, i.e.</p>
 <div class="math notranslate nohighlight">
 \[N_i(\phi_j) = \delta_{ij}, \quad 0\leq i,j \leq k.\]</div>
 </div></div><p>We now introduce our first example of a Ciarlet element.</p>
@@ -334,10 +334,11 @@ element. We need to check that <span class="math notranslate nohighlight">\(\mat
 <span class="math notranslate nohighlight">\(\mathcal{P}\)</span>. Let <span class="math notranslate nohighlight">\(v\in \mathcal{P}\)</span> with <span class="math notranslate nohighlight">\(N_i(v)=0\)</span> for all
 <span class="math notranslate nohighlight">\(N_i\in \mathcal{N}\)</span>. This means that</p>
 <div class="math notranslate nohighlight">
-\[v(a+(b-a)i/k)=0, \, i=,0,1,\ldots,k,\]</div>
-<p>which means that <span class="math notranslate nohighlight">\(v\)</span> vanishes at <span class="math notranslate nohighlight">\(k+1\)</span> points in <span class="math notranslate nohighlight">\(K\)</span>. Since <span class="math notranslate nohighlight">\(v\)</span> is
-a degree <span class="math notranslate nohighlight">\(k\)</span> polynomial, it must be zero by the fundamental theorem
-of algebra.</p>
+\[v(a+(b-a)i/k)=0, \, i=0,1,\ldots,k,\]</div>
+<p>which means that <span class="math notranslate nohighlight">\(v\)</span> vanishes at <span class="math notranslate nohighlight">\(k+1\)</span> distinct points in <span class="math notranslate nohighlight">\(K\)</span>.
+Since <span class="math notranslate nohighlight">\(v\)</span> is a polynomial of degree at most <span class="math notranslate nohighlight">\(k\)</span>, it must be zero: by
+the factor theorem, a nonzero polynomial of degree at most <span class="math notranslate nohighlight">\(k\)</span> has
+at most <span class="math notranslate nohighlight">\(k\)</span> roots.</p>
 </div></div><div class="proof proof-type-exercise" id="id13">
 
     <div class="proof-title">
@@ -407,7 +408,7 @@ so</p>
 \[c_{i_1,\ldots,i_{d-1},0} = 0, \quad \forall |i_1+\ldots+i_{d-1}|\leq k.\]</div>
 <p>This means we may rewrite</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}P(x) = {L(x)}\underbrace{\left(\sum_{i_d=1}^k\sum_{|i_1+\ldots+i_{d-1}|\leq k - i_d}c_{i_1,\ldots,i_{d-1},i_d} x_d^{i_d-1}\prod_{l=1}^{d-1} x_{l}^{i_l}\right)},\\P(x) = \underbrace{x_d}_{L(x)}\underbrace{\left(\sum_{i_d=0}^{k-1}\sum_{|i_1+\ldots+i_{d-1}|\leq k - i_d}c_{i_1,\ldots,i_{d-1},i_d} x_d^{i_d-1}\prod_{l=1}^{d-1} x_{l}^{i_l}\right)}_{Q(x)},\end{aligned}\end{align} \]</div>
+\[P(x) = \underbrace{x_d}_{L(x)}\underbrace{\left(\sum_{i_d=1}^{k}\sum_{|i_1+\ldots+i_{d-1}|\leq k - i_d}c_{i_1,\ldots,i_{d-1},i_d} x_d^{i_d-1}\prod_{l=1}^{d-1} x_{l}^{i_l}\right)}_{Q(x)},\]</div>
 <p>with <span class="math notranslate nohighlight">\(\deg(Q)=k-1\)</span>.</p>
 </div></div><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -447,7 +448,7 @@ dimensions.</p>
 <li><p><span class="math notranslate nohighlight">\(\mathcal{N}=\left\{N_{i,j}:0\leq i \leq k, \, 0\leq j \leq i\right\}\)</span> defined by <span class="math notranslate nohighlight">\(N_{i,j}(v)=v(x_{i,j})\)</span> where</p></li>
 </ol>
 <div class="math notranslate nohighlight">
-\[x_{i,j} = z_1 + (z_2-z_1)\frac{i}{k} + (z_3-z_1)\frac{j}{k}.\]</div>
+\[x_{i,j} = z_1 + (z_2-z_1)\frac{i}{k} + (z_3-z_2)\frac{j}{k}.\]</div>
 </div></div><p>We illustrate this for the cases <span class="math notranslate nohighlight">\(k=1,2\)</span>.</p>
 <div class="proof proof-type-example" id="id17">
 
@@ -494,7 +495,7 @@ first do this for <span class="math notranslate nohighlight">\(P1\)</span>.</p>
         
     </div><div class="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\Pi_1\)</span>, <span class="math notranslate nohighlight">\(\Pi_2\)</span>, <span class="math notranslate nohighlight">\(\Pi_3\)</span> be the three lines containing the
-vertices <span class="math notranslate nohighlight">\(z_2\)</span> and <span class="math notranslate nohighlight">\(z_3\)</span>, <span class="math notranslate nohighlight">\(z_1\)</span> and <span class="math notranslate nohighlight">\(z_3\)</span>, and <span class="math notranslate nohighlight">\(z_1\)</span> and <span class="math notranslate nohighlight">\(z_3\)</span>
+vertices <span class="math notranslate nohighlight">\(z_2\)</span> and <span class="math notranslate nohighlight">\(z_3\)</span>, <span class="math notranslate nohighlight">\(z_1\)</span> and <span class="math notranslate nohighlight">\(z_3\)</span>, and <span class="math notranslate nohighlight">\(z_1\)</span> and <span class="math notranslate nohighlight">\(z_2\)</span>
 respectively, and defined by <span class="math notranslate nohighlight">\(L_1=0\)</span>, <span class="math notranslate nohighlight">\(L_2=0\)</span>, and <span class="math notranslate nohighlight">\(L_3=0\)</span>
 respectively. Consider a linear polynomial <span class="math notranslate nohighlight">\(p\)</span> vanishing at <span class="math notranslate nohighlight">\(z_1\)</span>,
 <span class="math notranslate nohighlight">\(z_2\)</span>, and <span class="math notranslate nohighlight">\(z_3\)</span>. The restriction <span class="math notranslate nohighlight">\(p|_{\Pi_1}\)</span> of <span class="math notranslate nohighlight">\(p\)</span> to <span class="math notranslate nohighlight">\(\Pi_1\)</span> is
@@ -537,15 +538,25 @@ rectangle. Show that <span class="math notranslate nohighlight">\(\mathcal{N}\)<
         <span class="proof-type">Proof </span>
         
     </div><div class="proof-content">
-<p>Let <span class="math notranslate nohighlight">\(p\)</span> be a degree <span class="math notranslate nohighlight">\(2\)</span> polynomial with <span class="math notranslate nohighlight">\(N_i(p)\)</span> for all of the
+<p>Let <span class="math notranslate nohighlight">\(p\)</span> be a degree <span class="math notranslate nohighlight">\(2\)</span> polynomial with <span class="math notranslate nohighlight">\(N_i(p)=0\)</span> for all of the
 degree <span class="math notranslate nohighlight">\(2\)</span> dual basis elements. Let <span class="math notranslate nohighlight">\(\Pi_1\)</span>, <span class="math notranslate nohighlight">\(\Pi_2\)</span>, <span class="math notranslate nohighlight">\(\Pi_3\)</span>,
-<span class="math notranslate nohighlight">\(L_1\)</span>, <span class="math notranslate nohighlight">\(L_2\)</span> and <span class="math notranslate nohighlight">\(L_3\)</span> be defined as for the proof of Lemma
-. <span class="math notranslate nohighlight">\(p|_{\Pi_1}\)</span> is a degree 2 scalar polynomial vanishing
-at 3 points, and therefore <span class="math notranslate nohighlight">\(p=0\)</span> on <span class="math notranslate nohighlight">\(\Pi_1\)</span>, and so
-<span class="math notranslate nohighlight">\(p(x)=L_1(x)Q_1(x)\)</span> with <span class="math notranslate nohighlight">\(\deg(Q_1)=1\)</span>. We also have <span class="math notranslate nohighlight">\(0=p|_{\Pi_2}
-=L_1Q_1|_{\Pi_2}\)</span>, so <span class="math notranslate nohighlight">\(Q_1|_{\Pi_2}=0\)</span> and we conclude that
-<span class="math notranslate nohighlight">\(p(x)=cL_1(x)L_2(x)\)</span>. Finally, <span class="math notranslate nohighlight">\(p\)</span> also vanishes at the midpoint of
-<span class="math notranslate nohighlight">\(L_3\)</span>, so we conclude that <span class="math notranslate nohighlight">\(c=0\)</span> as required.</p>
+<span class="math notranslate nohighlight">\(L_1\)</span>, <span class="math notranslate nohighlight">\(L_2\)</span> and <span class="math notranslate nohighlight">\(L_3\)</span> be defined as for the proof of
+<a class="reference internal" href="#p1unisolve"><span class="std std-numref">lemma 2.19</span></a>. The restriction <span class="math notranslate nohighlight">\(p|_{\Pi_1}\)</span>
+is a degree 2 scalar polynomial vanishing at the 3 distinct points
+<span class="math notranslate nohighlight">\(z_2\)</span>, <span class="math notranslate nohighlight">\(z_3\)</span> and the midpoint of the edge between them, and
+therefore <span class="math notranslate nohighlight">\(p=0\)</span> on <span class="math notranslate nohighlight">\(\Pi_1\)</span>, and so <span class="math notranslate nohighlight">\(p(x)=L_1(x)Q_1(x)\)</span> with
+<span class="math notranslate nohighlight">\(\deg(Q_1)=1\)</span>.</p>
+<p>Now consider <span class="math notranslate nohighlight">\(\Pi_2\)</span>, which contains the three nodes <span class="math notranslate nohighlight">\(z_1\)</span>, <span class="math notranslate nohighlight">\(z_3\)</span>
+and the midpoint of the edge between them. Since <span class="math notranslate nohighlight">\(K\)</span> is
+non-degenerate, <span class="math notranslate nohighlight">\(L_1\)</span> vanishes at exactly one point of <span class="math notranslate nohighlight">\(\Pi_2\)</span>,
+namely <span class="math notranslate nohighlight">\(\Pi_1\cap\Pi_2=z_3\)</span>, so at the other two nodes we have
+<span class="math notranslate nohighlight">\(L_1\neq0\)</span> and hence <span class="math notranslate nohighlight">\(Q_1=0\)</span> there. The restriction <span class="math notranslate nohighlight">\(Q_1|_{\Pi_2}\)</span>
+is affine and vanishes at two distinct points, so <span class="math notranslate nohighlight">\(Q_1|_{\Pi_2}=0\)</span>
+and we conclude that <span class="math notranslate nohighlight">\(p(x)=cL_1(x)L_2(x)\)</span>.</p>
+<p>Finally, <span class="math notranslate nohighlight">\(p\)</span> also vanishes at the midpoint <span class="math notranslate nohighlight">\(m_3\)</span> of the edge
+contained in <span class="math notranslate nohighlight">\(\Pi_3\)</span>. This point lies on neither <span class="math notranslate nohighlight">\(\Pi_1\)</span> nor
+<span class="math notranslate nohighlight">\(\Pi_2\)</span>, so <span class="math notranslate nohighlight">\(L_1(m_3)L_2(m_3)\neq0\)</span>, and we conclude that <span class="math notranslate nohighlight">\(c=0\)</span> as
+required.</p>
 </div></div><p>The technique extends further to degree 3.</p>
 <div class="proof proof-type-exercise" id="id22">
 
@@ -571,21 +582,40 @@ triangular structure of the Lagrange triangle.</p>
         
     </div><div class="proof-content">
 <p>We prove by induction. Assume that the degree <span class="math notranslate nohighlight">\(k-3\)</span> Lagrange
-element is a finite element. Let <span class="math notranslate nohighlight">\(p\)</span> be a degree <span class="math notranslate nohighlight">\(k\)</span> polynomial
-with <span class="math notranslate nohighlight">\(N_i(p)\)</span> for all of the degree <span class="math notranslate nohighlight">\(k\)</span> dual basis elements. Let
-<span class="math notranslate nohighlight">\(\Pi_1\)</span>, <span class="math notranslate nohighlight">\(\Pi_2\)</span>, <span class="math notranslate nohighlight">\(\Pi_3\)</span>, <span class="math notranslate nohighlight">\(L_1\)</span>, <span class="math notranslate nohighlight">\(L_2\)</span> and <span class="math notranslate nohighlight">\(L_3\)</span> be defined as for
-the proof of <a class="reference internal" href="#p1unisolve"><span class="std std-numref">lemma 2.19</span></a>. The restriction
-<span class="math notranslate nohighlight">\(p|_{\Pi_1}\)</span> is a degree <span class="math notranslate nohighlight">\(k\)</span> polynomial in one variable that
-vanishes at <span class="math notranslate nohighlight">\(k+1\)</span> points, and therefore <span class="math notranslate nohighlight">\(p(x)=L_1(x)Q_1(x)\)</span>, with
-<span class="math notranslate nohighlight">\(\deg(Q_1)=k-1\)</span>. <span class="math notranslate nohighlight">\(p\)</span> and therefore <span class="math notranslate nohighlight">\(Q\)</span> also vanishes on <span class="math notranslate nohighlight">\(\Pi_2\)</span>, so
-<span class="math notranslate nohighlight">\(Q_1(x)=L_2(x)Q_2(x)\)</span>.</p>
-<p>Repeating the argument
-again means that <span class="math notranslate nohighlight">\(p(x)=L_1(x)L_2(x)L_3(x)Q_3(x)\)</span>, with <span class="math notranslate nohighlight">\(\deg(Q_3)=k-3\)</span>.
-<span class="math notranslate nohighlight">\(Q_3\)</span> must vanish on the remaining points in the interior of <span class="math notranslate nohighlight">\(K\)</span>, which
-are arranged in a smaller triangle <span class="math notranslate nohighlight">\(K'\)</span> and correspond to the evaluation
-points for a degree <span class="math notranslate nohighlight">\(k-3\)</span> Lagrange finite element on <span class="math notranslate nohighlight">\(K'\)</span>. From
-the inductive hypothesis, and using the results for <span class="math notranslate nohighlight">\(k=1,2,3\)</span>, we conclude
-that <span class="math notranslate nohighlight">\(Q_3\equiv=0\)</span>, and therefore <span class="math notranslate nohighlight">\(p\equiv0\)</span> as required.</p>
+element is a finite element on <em>any</em> non-degenerate triangle (we
+need this on a smaller triangle below, not on <span class="math notranslate nohighlight">\(K\)</span> itself). Let <span class="math notranslate nohighlight">\(p\)</span>
+be a degree <span class="math notranslate nohighlight">\(k\)</span> polynomial with <span class="math notranslate nohighlight">\(N_i(p)=0\)</span> for all of the degree
+<span class="math notranslate nohighlight">\(k\)</span> dual basis elements. Let <span class="math notranslate nohighlight">\(\Pi_1\)</span>, <span class="math notranslate nohighlight">\(\Pi_2\)</span>, <span class="math notranslate nohighlight">\(\Pi_3\)</span>, <span class="math notranslate nohighlight">\(L_1\)</span>,
+<span class="math notranslate nohighlight">\(L_2\)</span> and <span class="math notranslate nohighlight">\(L_3\)</span> be defined as for the proof of <a class="reference internal" href="#p1unisolve"><span class="std std-numref">lemma
+2.19</span></a>. Each edge line carries exactly <span class="math notranslate nohighlight">\(k+1\)</span> of the
+nodes.</p>
+<p>The restriction <span class="math notranslate nohighlight">\(p|_{\Pi_1}\)</span> is a degree <span class="math notranslate nohighlight">\(k\)</span> polynomial in one
+variable that vanishes at <span class="math notranslate nohighlight">\(k+1\)</span> distinct points, and therefore
+<span class="math notranslate nohighlight">\(p(x)=L_1(x)Q_1(x)\)</span>, with <span class="math notranslate nohighlight">\(\deg(Q_1)=k-1\)</span>. Of the <span class="math notranslate nohighlight">\(k+1\)</span> nodes on
+<span class="math notranslate nohighlight">\(\Pi_2\)</span>, exactly one (the shared vertex <span class="math notranslate nohighlight">\(\Pi_1\cap\Pi_2=z_3\)</span>) is a
+zero of <span class="math notranslate nohighlight">\(L_1\)</span>, so <span class="math notranslate nohighlight">\(Q_1\)</span> vanishes at the remaining <span class="math notranslate nohighlight">\(k\)</span> nodes of
+<span class="math notranslate nohighlight">\(\Pi_2\)</span>. Since <span class="math notranslate nohighlight">\(Q_1|_{\Pi_2}\)</span> has degree at most <span class="math notranslate nohighlight">\(k-1\)</span> and <span class="math notranslate nohighlight">\(k\)</span>
+distinct roots, <span class="math notranslate nohighlight">\(Q_1|_{\Pi_2}=0\)</span> and <span class="math notranslate nohighlight">\(Q_1(x)=L_2(x)Q_2(x)\)</span>, with
+<span class="math notranslate nohighlight">\(\deg(Q_2)=k-2\)</span>.</p>
+<p>Repeating the argument on <span class="math notranslate nohighlight">\(\Pi_3\)</span>, where <span class="math notranslate nohighlight">\(L_1L_2\)</span> vanishes at
+exactly the two vertices <span class="math notranslate nohighlight">\(z_2\)</span> and <span class="math notranslate nohighlight">\(z_1\)</span>, leaves <span class="math notranslate nohighlight">\(k-1\)</span> nodes at
+which <span class="math notranslate nohighlight">\(Q_2\)</span> vanishes; as <span class="math notranslate nohighlight">\(\deg(Q_2|_{\Pi_3})\leq k-2\)</span>, we get
+<span class="math notranslate nohighlight">\(Q_2(x)=L_3(x)Q_3(x)\)</span> and hence
+<span class="math notranslate nohighlight">\(p(x)=L_1(x)L_2(x)L_3(x)Q_3(x)\)</span>, with <span class="math notranslate nohighlight">\(\deg(Q_3)=k-3\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(Q_3\)</span> must vanish on the remaining points in the interior of <span class="math notranslate nohighlight">\(K\)</span>,
+at which <span class="math notranslate nohighlight">\(L_1L_2L_3\neq0\)</span>. In barycentric coordinates these are the
+points whose three coordinates are multiples of <span class="math notranslate nohighlight">\(1/k\)</span> and are each
+at least <span class="math notranslate nohighlight">\(1/k\)</span>, i.e. they are precisely the nodes of the degree
+<span class="math notranslate nohighlight">\(k-3\)</span> Lagrange element on the smaller triangle <span class="math notranslate nohighlight">\(K'\)</span> with vertices</p>
+<div class="math notranslate nohighlight">
+\[z_m' = \frac{1}{k}\left((k-3)z_m + z_1 + z_2 + z_3\right),
+\quad m=1,2,3,\]</div>
+<p>which is the image of <span class="math notranslate nohighlight">\(K\)</span> under the homothety about the centroid
+with ratio <span class="math notranslate nohighlight">\((k-3)/k\)</span>, and so is non-degenerate. From the inductive
+hypothesis, and using the results for <span class="math notranslate nohighlight">\(k=1,2,3\)</span>, we conclude that
+<span class="math notranslate nohighlight">\(Q_3\equiv0\)</span> on <span class="math notranslate nohighlight">\(K'\)</span> and hence, being a polynomial vanishing on a
+set with non-empty interior, <span class="math notranslate nohighlight">\(Q_3\equiv0\)</span>. Therefore <span class="math notranslate nohighlight">\(p\equiv0\)</span> as
+required.</p>
 </div></div></section>
 <section id="some-more-exotic-elements">
 <h2><span class="section-number">2.4. </span>Some more exotic elements<a class="headerlink" href="#some-more-exotic-elements" title="Link to this heading">¶</a></h2>
@@ -687,7 +717,7 @@ requirements between triangles, which we will do in this chapter.</p>
     </div><div class="proof-content">
 <p>A finite element space <span class="math notranslate nohighlight">\(V\)</span> is a <span class="math notranslate nohighlight">\(C^m\)</span> finite element space if <span class="math notranslate nohighlight">\(u\in
 C^m\)</span> for all <span class="math notranslate nohighlight">\(u\in V\)</span>.</p>
-</div></div><p>The following lemma guides use in how to inspect the continuity of
+</div></div><p>The following lemma guides us in how to inspect the continuity of
 finite element functions.</p>
 <div class="proof proof-type-lemma" id="id28">
 <span id="cty"></span>
@@ -1000,8 +1030,8 @@ element functions.</p>
       <div class="clearer"></div>
     </div>
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2014-2022, David A. Ham, Colin J. Cotter and Jack S. Hale.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    &#169; Copyright 2014-2026, David A. Ham, Colin J. Cotter and Jack S. Hale.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
     </div>
   </body>
 </html>

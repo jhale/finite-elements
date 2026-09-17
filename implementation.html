@@ -5,14 +5,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>The implementation exercise &#8212; Finite element course 2024.0 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <title>The implementation exercise &#8212; Finite element course 2026.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/fenics.css?v=7793b76c" />
     <link rel="stylesheet" type="text/css" href="_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <script src="_static/documentation_options.js?v=7ff0cb77"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/documentation_options.js?v=9c5a5fc5"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/proof.js"></script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -60,11 +60,11 @@ work through the notes and videos until you come to an exercise. Each exercise
 will invite you to implement another part of a finite element implementation, so
 that by the end of the term we will be solving finite element problems.</p>
 <p>Along the way, there will be the opportunity to get help and feedback through
-the module Piazza board, weekly online labs, and through pull requests for
+the module Ed board, weekly online labs, and through pull requests for
 feedback in weeks 4 and 7.</p>
 <section id="formalities-and-marking-scheme">
 <h2>Formalities and marking scheme<a class="headerlink" href="#formalities-and-marking-scheme" title="Link to this heading">¶</a></h2>
-<p>The implementation exercise is due at 1300 on Friday 22 March 2024. Submission
+<p>The implementation exercise is due at 1300 on Monday 24 March 2025. Submission
 is via GitHub: the last commit pushed to GitHub and dated before the deadline
 will be marked.</p>
 <p>The marking scheme will be as follows:</p>
@@ -120,14 +120,14 @@ terminal</span></a> and switch to the folder:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>docs
 </pre></div>
 </div>
-<p>Note that <cite>$</cite> is the command prompt (which might be a different character such
-as <cite>%</cite> or <cite>&gt;</cite> for you). You don’t type the prompt. Start with <cite>cd</cite>. Next we
+<p>Note that <code class="docutils literal notranslate"><span class="pre">$</span></code> is the command prompt (which might be a different character such
+as <code class="docutils literal notranslate"><span class="pre">%</span></code> or <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> for you). You don’t type the prompt. Start with <code class="docutils literal notranslate"><span class="pre">cd</span></code>. Next we
 create the folder we’ll use for this course. Suppose we choose to call it
 <code class="file docutils literal notranslate"><span class="pre">finite-element</span></code>, then we would type:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>mkdir<span class="w"> </span>finite-element
 </pre></div>
 </div>
-<p><cite>mkdir</cite> stands for “make directory”. <em>Directory</em> is an alternative term to
+<p><code class="docutils literal notranslate"><span class="pre">mkdir</span></code> stands for “make directory”. <em>Directory</em> is an alternative term to
 <em>folder</em>. Finally we switch (“change directory”) into that folder:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>finite-element
 </pre></div>
@@ -143,7 +143,7 @@ system. With your current working folder set to the course folder, run:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>fe_venv
 </pre></div>
 </div>
-<p>If your Python interpreter has a different name (e.g. <cite>python3.11</cite> or <cite>py</cite>)
+<p>If your Python interpreter has a different name (e.g. <code class="docutils literal notranslate"><span class="pre">python3.11</span></code> or <code class="docutils literal notranslate"><span class="pre">py</span></code>)
 then you type that instead.</p>
 </section>
 <section id="activating-your-venv">
@@ -162,8 +162,35 @@ containing the venv, you need to modify the path accordingly.</p>
 </section>
 <section id="setting-up-your-repository">
 <h3>Setting up your repository<a class="headerlink" href="#setting-up-your-repository" title="Link to this heading">¶</a></h3>
-<p>We’re using a tool called <a class="reference external" href="https://classroom.github.com">GitHub classroom</a> to automate the creation of your
-copies of the repository. To create your repository, <a class="reference external" href="https://classroom.github.com/a/ZEeJSgi5">click here</a>.</p>
+<p>If you’re taking the Imperial module then we’re using a tool called <a class="reference external" href="https://classroom.github.com">GitHub
+classroom</a> to automate the creation of your
+copies of the repository. To create your repository, <a class="reference external" href="https://classroom.github.com/a/WOdAhT90">click here</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When attempt to accept an assignment you might instead receive an error
+message starting:</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Your GitHub account cannot this invitation at this time. The
+Classroom’s Organization restricts membership to users within the same
+enterprise.</p>
+</div>
+<p>This means that you need to associate your GitHub account with the Imperial
+College London GitHub enterprise. You should click on the Imperial
+GitHub <a class="reference external" href="https://github.com/orgs/ImperialCollegeLondon/sso">single sign on page</a> and sign in using
+your Imperial credentials. If prompted to do so, also sign in with your
+GitHub username. You should now be able to go back and click on the
+assignment acceptance link.</p>
+</div>
+<p>If you’re not taking the Imperial module and simply want to attempt the
+exercised for your own purposes, then you can obtain the skeleton code by
+forking <a class="reference external" href="https://github.com/finite-element/finite-element-course">the course repository</a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you are taking the Imperial module for credit, you must use the GitHub
+classroom link. If you do not do so then your commits will not show as
+submission of the exercise.</p>
+</div>
 </section>
 <section id="cloning-a-local-copy">
 <h3>Cloning a local copy<a class="headerlink" href="#cloning-a-local-copy" title="Link to this heading">¶</a></h3>
@@ -172,7 +199,7 @@ copies of the repository. To create your repository, <a class="reference externa
 </pre></div>
 </div>
 <p>Substituting your git repository url for &lt;url&gt;. Your git repository
-url can be found by clicking on <cite>clone or download</cite> at the top right of your repository page on GitHub.</p>
+url can be found by clicking on <code class="docutils literal notranslate"><span class="pre">clone</span> <span class="pre">or</span> <span class="pre">download</span></code> at the top right of your repository page on GitHub.</p>
 </section>
 <section id="installing-the-course-python-package">
 <h3>Installing the course Python package<a class="headerlink" href="#installing-the-course-python-package" title="Link to this heading">¶</a></h3>
@@ -270,7 +297,7 @@ information from the second year Principles of Programming <a class="reference e
 raising an issue</span></a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Please don’t post large pieces of code to Piazza. Just post minimal examples
+<p>Please don’t post large pieces of code to Ed. Just post minimal examples
 if they help. However always commit and push your work, and post the
 <a class="reference external" href="https://imperial-fons-computing.github.io/git.html#git-hash" title="(in Installation instructions for FoNS v2020.0)"><span class="xref std std-ref">git commit hash</span></a> in the repository. The instructor can
 always find your work from the git hash, so long as you’ve pushed to GitHub.</p>
@@ -292,7 +319,7 @@ find useful.</p>
 </dd>
 <dt>Don’t forget the 1D case</dt><dd><p>Your finite element library needs to work in one and two dimensions.</p>
 </dd>
-<dt>Return a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.array.html#numpy.array" title="(in NumPy v2.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.array()</span></code></a></dt><dd><p>Many of the functions you have to write return arrays. Make sure
+<dt>Return a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.array.html#numpy.array" title="(in NumPy v2.5)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.array()</span></code></a></dt><dd><p>Many of the functions you have to write return arrays. Make sure
 you actually return an array and not a list (it’s usually fine to
 build the answer as a list, but convert it to an array before you
 return it).</p>
@@ -309,8 +336,8 @@ return it).</p>
       <div class="clearer"></div>
     </div>
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2014-2022, David A. Ham, Colin J. Cotter and Jack S. Hale.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    &#169; Copyright 2014-2026, David A. Ham, Colin J. Cotter and Jack S. Hale.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
     </div>
   </body>
 </html>

@@ -5,17 +5,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>4. Finite element problems: solvability and stability &#8212; Finite element course 2024.0 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <title>4. Finite element problems: solvability and stability &#8212; Finite element course 2026.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/fenics.css?v=7793b76c" />
     <link rel="stylesheet" type="text/css" href="_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <script src="_static/documentation_options.js?v=7ff0cb77"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/documentation_options.js?v=9c5a5fc5"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/proof.js"></script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
-    <script async="async" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script defer="defer" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="5. Convergence of finite element approximations" href="L5_convergence.html" />
@@ -585,7 +585,7 @@ constant <span class="math notranslate nohighlight">\(0&lt;M&lt;\infty\)</span> 
 <p>A bilinear form is coercive on a Hilbert space <span class="math notranslate nohighlight">\(V\)</span> if there exists a
 constant <span class="math notranslate nohighlight">\(0&lt;\gamma&lt;\infty\)</span> such that</p>
 <div class="math notranslate nohighlight">
-\[|b(u,u)| \geq \gamma\|u\|_V\|u\|_V.\]</div>
+\[b(u,u) \geq \gamma\|u\|_V\|u\|_V.\]</div>
 </div></div><p>These two properties combine in the following theorem providing sufficient
 conditions for existence and uniqueness for solutions of linear variational
 problems.</p>
@@ -858,7 +858,7 @@ defining <span class="math notranslate nohighlight">\(\Omega'_s\subset \Omega\)<
 under this transformation. Then,</p>
 <div class="math notranslate nohighlight">
 \[ \begin{align}\begin{aligned}II &amp;= \int_\Omega \int_{s=1/2}^2 \frac{1}{s^2}
-\int_{\Omega'_s} |\nabla u(x')|^2 \, d x' \, d s \, d y,\\&amp;\leq \int_\Omega \int_{s=0}^{1/2} \frac{1}{s^2}
+\int_{\Omega'_s} |\nabla u(x')|^2 \, d x' \, d s \, d y,\\&amp;\leq \int_\Omega \int_{s=1/2}^2 \frac{1}{s^2}
 \int_{\Omega} |\nabla u(x')|^2 \, d x' \, d s \, d y,\\&amp;=|\Omega| |\nabla u|^2_{H^1(\Omega)}.\end{aligned}\end{align} \]</div>
 <p>Combining,</p>
 <div class="math notranslate nohighlight">
@@ -1084,8 +1084,8 @@ refined. What are they converging to?</p>
       <div class="clearer"></div>
     </div>
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2014-2022, David A. Ham, Colin J. Cotter and Jack S. Hale.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    &#169; Copyright 2014-2026, David A. Ham, Colin J. Cotter and Jack S. Hale.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
     </div>
   </body>
 </html>
